@@ -1,0 +1,106 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'surface-container-high': '#dce9ff',
+        'on-tertiary': '#ffffff',
+        'surface-container-low': '#eff4ff',
+        primary: '#091426',
+        'surface-container-lowest': '#ffffff',
+        'on-primary-fixed-variant': '#3c475a',
+        'on-background': '#0b1c30',
+        tertiary: '#00113b',
+        'secondary-fixed-dim': '#6bd8cb',
+        'on-primary-fixed': '#111c2d',
+        'primary-fixed': '#d8e3fb',
+        'primary-container': '#1e293b',
+        background: '#f8f9ff',
+        'on-secondary-fixed': '#00201d',
+        'tertiary-container': '#002367',
+        'inverse-surface': '#213145',
+        'secondary-container': '#86f2e4',
+        'surface-variant': '#d3e4fe',
+        'surface-container': '#e5eeff',
+        'on-tertiary-fixed-variant': '#003ea8',
+        'on-primary': '#ffffff',
+        'on-tertiary-container': '#5f8aff',
+        'error-container': '#ffdad6',
+        'on-secondary-fixed-variant': '#005049',
+        'inverse-on-surface': '#eaf1ff',
+        'on-tertiary-fixed': '#00174b',
+        'outline-variant': '#c5c6cd',
+        'on-primary-container': '#8590a6',
+        'surface-bright': '#f8f9ff',
+        'tertiary-fixed': '#dbe1ff',
+        'primary-fixed-dim': '#bcc7de',
+        'on-surface': '#0b1c30',
+        'surface-tint': '#545f73',
+        'tertiary-fixed-dim': '#b4c5ff',
+        error: '#ba1a1a',
+        'on-error': '#ffffff',
+        'on-secondary-container': '#006f66',
+        outline: '#75777d',
+        'surface-container-highest': '#d3e4fe',
+        'on-error-container': '#93000a',
+        'inverse-primary': '#bcc7de',
+        'on-secondary': '#ffffff',
+        surface: '#f8f9ff',
+        'secondary-fixed': '#89f5e7',
+        secondary: '#006a61',
+        'surface-dim': '#cbdbf5',
+        'on-surface-variant': '#45474c'
+      },
+      borderRadius: {
+        DEFAULT: '0.125rem',
+        lg: '0.25rem',
+        xl: '0.5rem',
+        full: '0.75rem'
+      },
+      spacing: {
+        'margin-md': '1.5rem',
+        'space-xs': '0.25rem',
+        'space-sm': '0.5rem',
+        gutter: '1rem',
+        'space-xl': '1.5rem',
+        'space-2xs': '0.125rem',
+        'space-2xl': '2rem',
+        'space-md': '0.75rem',
+        'space-lg': '1rem',
+        'margin-lg': '2rem',
+        'gutter-lg': '1.5rem',
+        margin: '1rem'
+      },
+      fontFamily: {
+        'body-sm': ['Inter', 'sans-serif'],
+        'body-md': ['Inter', 'sans-serif'],
+        'headline-xl': ['Inter', 'sans-serif'],
+        'data-mono-md': ['JetBrains Mono', 'monospace'],
+        'data-mono-sm': ['JetBrains Mono', 'monospace'],
+        'data-mono-lg': ['JetBrains Mono', 'monospace'],
+        'headline-lg': ['Inter', 'sans-serif'],
+        'label-caps': ['Inter', 'sans-serif'],
+        'body-lg': ['Inter', 'sans-serif'],
+        'headline-md': ['Inter', 'sans-serif']
+      },
+      fontSize: {
+        'body-sm': ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],
+        'body-md': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }],
+        'headline-xl': ['2rem', { lineHeight: '2.5rem', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'data-mono-md': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0em', fontWeight: '500' }],
+        'data-mono-sm': ['0.6875rem', { lineHeight: '0.875rem', letterSpacing: '0.02em', fontWeight: '500' }],
+        'data-mono-lg': ['0.875rem', { lineHeight: '1.25rem', letterSpacing: '-0.01em', fontWeight: '500' }],
+        'headline-lg': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'label-caps': ['0.6875rem', { lineHeight: '0.875rem', letterSpacing: '0.05em', fontWeight: '600' }],
+        'body-lg': ['1rem', { lineHeight: '1.5rem', fontWeight: '400' }],
+        'headline-md': ['1.125rem', { lineHeight: '1.5rem', letterSpacing: '-0.015em', fontWeight: '600' }]
+      },
+      boxShadow: {
+        sm: '0 1px 8px rgba(0,0,0,0.04)'
+      }
+    }
+  },
+  plugins: []
+}
