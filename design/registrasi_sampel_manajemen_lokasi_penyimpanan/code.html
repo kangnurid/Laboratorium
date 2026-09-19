@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "surface-variant": "#d3e4fe", "on-surface": "#0b1c30", "on-secondary-fixed-variant": "#005049", "on-tertiary-fixed": "#00174b", "on-error-container": "#93000a", "surface-container-highest": "#d3e4fe", "surface-bright": "#f8f9ff", "on-primary-fixed-variant": "#3c475a", "on-surface-variant": "#45474c", "on-primary": "#ffffff", "on-secondary-container": "#006f66", "on-primary-container": "#8590a6", "on-tertiary-container": "#5f8aff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#003ea8", "tertiary-fixed": "#dbe1ff", "secondary-container": "#86f2e4", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "tertiary": "#00113b", "on-tertiary": "#ffffff", "secondary-fixed": "#89f5e7", "on-background": "#0b1c30", "error": "#ba1a1a", "outline": "#75777d", "surface-container-high": "#dce9ff", "inverse-primary": "#bcc7de", "on-secondary": "#ffffff", "primary-fixed": "#d8e3fb", "on-secondary-fixed": "#00201d", "tertiary-fixed-dim": "#b4c5ff", "primary-fixed-dim": "#bcc7de", "primary-container": "#1e293b", "surface-container": "#e5eeff", "secondary-fixed-dim": "#6bd8cb", "on-primary-fixed": "#111c2d", "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "surface-tint": "#545f73", "tertiary-container": "#002367", "primary": "#091426", "error-container": "#ffdad6", "background": "#f8f9ff", "outline-variant": "#c5c6cd", "secondary": "#006a61", "surface-container-low": "#eff4ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.5rem", "space-lg": "1rem", "gutter": "1rem", "margin-md": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "margin-lg": "2rem", "space-2xs": "0.125rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-2xl": "2rem", "gutter-lg": "1.5rem" }, "fontFamily": { "data-mono-md": ["JetBrains Mono"], "body-sm": ["Inter"], "label-caps": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "data-mono-sm": ["JetBrains Mono"], "data-mono-lg": ["JetBrains Mono"], "body-md": ["Inter"], "headline-xl": ["Inter"] }, "fontSize": { "data-mono-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "400" }], "label-caps": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "data-mono-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "data-mono-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-xl": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-md border-b border-outline-variant/20 bg-surface-container-lowest shrink-0"><img alt="SynthaLIMS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VpsSyc1CY79_guaP0BZ_k0wUmR2Nh8OilPMpXsEPW1i27cKMQAiXaGYzThpUfs1zXbSifKawgZPImuNikfoSSm4qCJcE5Uj-A4y2g3c8bRuV65BXLDMOtt15ap8B29If-Tr1nkl9rQs89h38K8dgomvJzbCJKP3LnM-ilULp9Ku-IZbGQJvNXDcK4kS9B-zx6xxA_mQFdPd3ysRplGaWYkP_GOppxV3IcJKoh8miuSEvLRh_V3Tk4mvg"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary leading-tight font-bold">SynthaLIMS</span><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant uppercase tracking-wider">v3.42 • Enterprise</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-space-md"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Overview &amp; Intake</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="dashboard-utama" href="#"><span class="font-body-md text-body-md">Dashboard Utama</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-medium">LIVE</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="pelacakan-sampel" href="#"><span class="font-body-md text-body-md">Pelacakan Sampel</span></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-xs rounded transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="registrasi-sampel" href="#"><span class="font-body-md text-body-md">Registrasi Sampel</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Testing &amp; Workflow</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="antrean-pengujian" href="#"><span class="font-body-md text-body-md">Antrean Pengujian</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-surface-container text-on-surface">14</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="workspace-analis" href="#"><span class="font-body-md text-body-md">Workspace Analis</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="manajemen-sop" href="#"><span class="font-body-md text-body-md">Manajemen SOP</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Quality &amp; Compliance</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="validasi-persetujuan" href="#"><span class="font-body-md text-body-md">Validasi &amp; Persetujuan</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-semibold">3</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="kontrol-kualitas-qc" href="#"><span class="font-body-md text-body-md">Kontrol Kualitas / QC</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="jejak-audit" href="#"><span class="font-body-md text-body-md">Jejak Audit</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Logistics &amp; Admin</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="stok-reagen-kimia" href="#"><span class="font-body-md text-body-md">Stok Reagen &amp; Kimia</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="kalibrasi-alat" href="#"><span class="font-body-md text-body-md">Kalibrasi Alat</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="laporan-coa" href="#"><span class="font-body-md text-body-md">Laporan &amp; COA</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="pengguna-klien" href="#"><span class="font-body-md text-body-md">Pengguna &amp; Klien</span></a></div></nav></div></div><div class="p-space-md border-t border-outline-variant/20 bg-surface-container-low/50"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Cleanroom Unit A</span></div><span class="font-data-mono-sm text-data-mono-sm text-secondary font-semibold">ONLINE</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/25 z-40 px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-20 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Cari sampel (#SMP-...), barcode, nama klien, atau tes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-space-2xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">barcode_scanner</span><span class="font-data-mono-sm text-data-mono-sm px-1 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">⌘K</span></div></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container border border-outline-variant/30"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-data-mono-sm text-data-mono-sm text-on-surface font-medium">Lab Suhu: 20.4°C • Kelembapan: 48% <span class="text-secondary font-semibold">(Optimal)</span></span></div><button class="relative p-space-xs rounded hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-data-mono-sm text-[10px] font-bold ring-2 ring-surface-container-lowest">3</span></button><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-md pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Dr. Aris Setiawan, M.Si</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Kepala Laboratorium</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full pb-28">
+<!-- Top Header & Breadcrumbs Area -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Overview &amp; Intake</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-bold">Registrasi Sampel</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-data-mono-sm text-data-mono-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">ISO/IEC 17025 VERIFIED</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">Registrasi Spesimen Baru &amp; Alokasi Penyimpanan</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Penerimaan spesimen digital seketika, validasi integritas biologis, cetak label barcode cryo-grade, dan penetapan kompartemen cold-chain presisi IoT.
+      </p>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-space-xs px-3 py-2 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md font-medium shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">document_scanner</span>
+<span>Scan Dokumen <span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant opacity-70">(Alt+S)</span></span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3 py-2 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md font-medium shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Import Manifest</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3 py-2 rounded bg-surface-container-lowest text-error font-body-md text-body-md font-medium shadow-sm hover:bg-error-container hover:text-on-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reset</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-4 py-2 rounded bg-primary text-on-primary font-body-md text-body-md font-semibold shadow-md hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Simpan &amp; Cetak Barcode</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-primary-container bg-surface-container-highest/20 px-1 py-0.5 rounded">Ctrl+↵</span>
+</button>
+</div>
+</div>
+<!-- Main Dual Panel Workflow Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANEL: Sample Data Entry Form (7 of 12 cols = 58%) -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Section A: Identifikasi & Kode Unik -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b-0">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed font-data-mono-sm text-data-mono-sm font-bold">A</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Identifikasi Spesimen &amp; Barcode Gen</h2>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary bg-secondary-container/40 px-2 py-0.5 rounded-full font-semibold">AUTO-SYNC LIS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Sample Code & Action -->
+<div class="md:col-span-7 flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Kode Sampel Terkunci (Unique LIMS UID)</label>
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 flex items-center justify-between px-space-md h-10 rounded bg-surface-container-low font-data-mono-lg text-data-mono-lg font-bold text-primary">
+<span>#SMP-2025-1043</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+</div>
+<button class="p-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Salin Kode" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Regenerasi UID Baru" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Batch prefix: Lab Patologi Klinik • Seri 104x</span>
+</div>
+<!-- Barcode Graphic Preview Card -->
+<div class="md:col-span-5 bg-surface-container-low rounded p-space-sm flex flex-col items-center justify-center">
+<div class="w-full bg-surface-container-lowest p-2 rounded flex flex-col items-center justify-center shadow-2xs">
+<!-- Inline SVG Barcode Pattern -->
+<svg class="w-full h-8" fill="currentColor" viewbox="0 0 160 30">
+<rect class="text-on-surface" height="30" width="3" x="0" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="5" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="9" y="0"></rect>
+<rect class="text-on-surface" height="30" width="1" x="15" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="18" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="23" y="0"></rect>
+<rect class="text-on-surface" height="30" width="5" x="27" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="34" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="38" y="0"></rect>
+<rect class="text-on-surface" height="30" width="1" x="43" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="46" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="52" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="56" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="61" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="65" y="0"></rect>
+<rect class="text-on-surface" height="30" width="1" x="71" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="74" y="0"></rect>
+<rect class="text-on-surface" height="30" width="5" x="79" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="86" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="90" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="95" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="99" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="105" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="109" y="0"></rect>
+<rect class="text-on-surface" height="30" width="1" x="114" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="117" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="123" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="127" y="0"></rect>
+<rect class="text-on-surface" height="30" width="5" x="132" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="139" y="0"></rect>
+<rect class="text-on-surface" height="30" width="3" x="143" y="0"></rect>
+<rect class="text-on-surface" height="30" width="1" x="148" y="0"></rect>
+<rect class="text-on-surface" height="30" width="4" x="151" y="0"></rect>
+<rect class="text-on-surface" height="30" width="2" x="157" y="0"></rect>
+</svg>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold tracking-widest mt-1">*SMP-2025-1043-CLIN*</span>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider mt-1">Format Code128 + DataMatrix 2D</span>
+</div>
+</div>
+<!-- Matriks Spesimen & Prioritas Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-md pt-space-md bg-surface-container-low/40 p-space-md rounded">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Matriks &amp; Tipe Spesimen</label>
+<select class="w-full h-10 px-3 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-2xs">
+<option selected="">Darah Vena EDTA (Tutup Ungu K2EDTA)</option>
+<option>Plasma Heparin (Tutup Hijau Lithium Heparin)</option>
+<option>Serum Clot Activator (Tutup Merah)</option>
+<option>Swab Nasofaring (VTM - Viral Media)</option>
+<option>Air Limbah Industri Effluent</option>
+<option>Ekstrak Herbal / Pangan Olahan</option>
+<option>Urin Tampung 24 Jam</option>
+</select>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">EDTA-K2 3.0 mL</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Inversi 8-10x</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tingkat Prioritas / Cito SLA</label>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded">
+<button class="py-1.5 px-2 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex flex-col items-center transition-all" type="button">
+<span>Rutin</span>
+<span class="font-data-mono-sm text-[10px] text-on-primary-container">SLA 24 Jam</span>
+</button>
+<button class="py-1.5 px-2 rounded hover:bg-error-container text-on-surface hover:text-on-error-container font-body-sm text-body-sm font-medium flex flex-col items-center transition-all" type="button">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                  Cito!
+                </span>
+<span class="font-data-mono-sm text-[10px] text-error font-bold">≤ 2 Jam</span>
+</button>
+<button class="py-1.5 px-2 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm font-medium flex flex-col items-center transition-all" type="button">
+<span>Investigasi</span>
+<span class="font-data-mono-sm text-[10px]">Audit/R&amp;D</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Estimasi selesai hasil: Besok, 23 Okt 2025 pukul 10:00 WIB
+            </span>
+</div>
+</div>
+</div>
+<!-- Section B: Data Asal Pengirim & Klien -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed font-data-mono-sm text-data-mono-sm font-bold">B</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Data Asal Pengirim &amp; Klien</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">FASKES RUJUKAN RESMI</span>
+</div>
+<!-- Segmented Client Category -->
+<div class="flex flex-wrap gap-2 mb-space-md p-1 bg-surface-container-low rounded">
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-primary font-body-sm text-body-sm font-semibold shadow-2xs" type="button">Fasilitas Kesehatan / RS</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium" type="button">Rekanan Industri QA/QC</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium" type="button">Dinas / BPOM / Regulator</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium" type="button">Rujukan Lab Internal</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Client name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Instansi Pengirim</label>
+<div class="relative">
+<input class="w-full h-10 px-3 pl-9 rounded bg-surface-container-low text-on-surface font-body-md text-body-md font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="RS Siloam Lippo Village - Paviliun Umum"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">local_hospital</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">ID Rekanan: #CLI-SLM-JKT-04</span>
+</div>
+<!-- Reference ID -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">No. Rujukan / Surat Pengantar / RM</label>
+<input class="w-full h-10 px-3 rounded bg-surface-container-low text-on-surface font-data-mono-md text-data-mono-md focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="REF-SLM-9920198-PK"/>
+<span class="font-body-sm text-body-sm text-secondary">Terautentikasi otomatis via bridging API Siloam</span>
+</div>
+<!-- Subject name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Nama Subjek / Pasien / Batch Sample</label>
+<div class="relative">
+<input class="w-full h-10 px-3 pl-9 rounded bg-surface-container-low text-on-surface font-body-md text-body-md font-medium focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="Tn. Hendra Gunawan (48 Thn - L)"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">person</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">NIK/ID: 3174**********02 • Dokter Pengirim: dr. Randy Sp.PK</span>
+</div>
+<!-- Sampling time & Received time -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Waktu Sampling</label>
+<input class="w-full h-10 px-2 rounded bg-surface-container-low text-on-surface font-data-mono-sm text-data-mono-sm" type="text" value="22/10 08:15 WIB"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Diterima Lab</label>
+<input class="w-full h-10 px-2 rounded bg-surface-container-high text-on-surface font-data-mono-sm text-data-mono-sm font-semibold" type="text" value="22/10 09:45 WIB"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section C: Kondisi Fisik & Verifikasi Integritas Sampel (ISO/IEC 17025) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed font-data-mono-sm text-data-mono-sm font-bold">C</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Verifikasi Kondisi Fisik &amp; Integritas Spesimen</h2>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded bg-secondary-fixed-dim text-on-secondary-fixed font-semibold">LULUS UJI INTAKE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-md">
+<!-- Volume Received -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Volume Diterima</span>
+<div class="flex items-baseline gap-1">
+<input class="w-20 h-8 px-2 rounded bg-surface-container-lowest text-primary font-data-mono-lg text-data-mono-lg font-bold" type="text" value="4.5"/>
+<span class="font-body-md text-body-md font-semibold text-on-surface">mL</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-semibold">✓ Cukup (Min: 3.0 mL)</span>
+</div>
+<!-- Temp Intake -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Suhu Termometer IR Intake</span>
+<div class="flex items-baseline gap-1">
+<input class="w-20 h-8 px-2 rounded bg-surface-container-lowest text-primary font-data-mono-lg text-data-mono-lg font-bold" type="text" value="3.8"/>
+<span class="font-body-md text-body-md font-semibold text-on-surface">°C</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-semibold">✓ Optimal Cold-Box (2-8°C)</span>
+</div>
+<!-- Visual Appearance -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Penampakan Visual Serum/Spesimen</span>
+<select class="w-full h-8 px-2 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface font-semibold focus:outline-none">
+<option selected="">Jernih (Non-Hemolisis)</option>
+<option>Hemolisis Ringan (+)</option>
+<option>Ikterik Berat</option>
+<option>Lipemik / Keruh</option>
+<option>Terdapat Bekuan Beku</option>
+</select>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Indeks HIL: 0 / 0 / 0</span>
+</div>
+</div>
+<!-- Checkbox Checklist & Visual Confirmation -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm mb-space-md">
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low/60 cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0 accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Tabung Utuh &amp; Tersegel</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low/60 cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0 accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Tidak Ada Kebocoran Fisik</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low/60 cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0 accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Label Barcode Pengirim Klir</span>
+</label>
+</div>
+<!-- Intake Officer Notes -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Catatan Petugas Intake / Analis Penerima</label>
+<input class="w-full h-9 px-3 rounded bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="Spesimen diantar kurir medik khusus RS Siloam dalam coolbox bersegel QC dengan 2 ice gel aktif."/>
+</div>
+</div>
+<!-- Section D: Penugasan Uji & Parameter Diminta -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-fixed text-on-primary-fixed font-data-mono-sm text-data-mono-sm font-bold">D</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Penugasan Uji &amp; Parameter Lab Terpilih</h2>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">3 DARI 6 DIPILIH</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-xs mb-space-md">
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container text-on-surface cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold">Panel Kimia Lengkap</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">SOP-PK-002 • 1.5 Jam</span>
+</div>
+</label>
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container text-on-surface cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold">Glukosa Darah Puasa</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Hexokinase • 30 Mnt</span>
+</div>
+</label>
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container text-on-surface cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold">HbA1c (HPLC)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">SOP-BIO-109 • 1.0 Jam</span>
+</div>
+</label>
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container-low hover:bg-surface-container text-on-surface cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface-variant">Profil Lipid Lengkap</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant/70">Kolest, HDL, LDL, TG</span>
+</div>
+</label>
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container-low hover:bg-surface-container text-on-surface cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface-variant">Elektrolit Serum (ISE)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant/70">Na+, K+, Cl-</span>
+</div>
+</label>
+<label class="flex items-start gap-2 p-space-sm rounded bg-surface-container-low hover:bg-surface-container text-on-surface cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 accent-primary" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface-variant">Fungsi Ginjal (Ureum/Creat)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant/70">Jaffe Kinetic</span>
+</div>
+</label>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">timelapse</span>
+<span class="font-body-sm text-body-sm font-medium">Estimasi Durasi Kerja Analis Mesin Otomatis:</span>
+</div>
+<span class="font-data-mono-md text-data-mono-md font-bold text-primary">3 Jam 00 Menit (3 Parameter Aktif)</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Storage Matrix & Cold-Chain Allocation (5 of 12 cols = 42%) -->
+<div class="xl:col-span-5 flex flex-col gap-space-lg">
+<!-- Unit Selector & Live IoT Bar -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">ac_unit</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Matriks Kompartemen Rak</h2>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">TRAY 04 : 100 SLOTS</span>
+</div>
+<!-- Storage Unit Segmented Tabs -->
+<div class="grid grid-cols-2 gap-space-xs mb-space-md">
+<button class="flex flex-col p-2.5 rounded bg-primary text-on-primary text-left shadow-xs transition-all" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-md text-body-md font-bold leading-tight">Chiller B1</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary-fixed font-bold">4.1°C</span>
+</div>
+<span class="font-data-mono-sm text-[11px] text-on-primary-container">2°C - 8°C • 64% Terisi</span>
+</button>
+<button class="flex flex-col p-2.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-left transition-all" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-md text-body-md font-semibold text-on-surface-variant leading-tight">Cryo Ultra -80°</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">-78.9°C</span>
+</div>
+<span class="font-data-mono-sm text-[11px] text-on-surface-variant">Bio-Arsip • 82% Terisi</span>
+</button>
+<button class="flex flex-col p-2.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-left transition-all" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-md text-body-md font-semibold text-on-surface-variant leading-tight">Inkubator 37°</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">36.8°C</span>
+</div>
+<span class="font-data-mono-sm text-[11px] text-on-surface-variant">Kultur Mikrobiologi</span>
+</button>
+<button class="flex flex-col p-2.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-left transition-all" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-md text-body-md font-semibold text-on-surface-variant leading-tight">Arsip Suhu Kamar</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">21.5°C</span>
+</div>
+<span class="font-data-mono-sm text-[11px] text-on-surface-variant">Histologi Blok Parafin</span>
+</button>
+</div>
+<!-- Telemetry Realtime IoT Bar -->
+<div class="p-space-sm rounded bg-surface-container flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Chiller B1 Sensor IoT #SENS-CH-04</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-bold">72 / 100 Slot Digunakan</span>
+</div>
+<!-- Matrix Visual 10x10 Interactive Container -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<!-- Col Headers 1-10 -->
+<div class="grid grid-cols-11 gap-1 text-center font-data-mono-sm text-[10px] text-on-surface-variant font-bold mb-1">
+<span class="text-on-surface-variant/40">#</span>
+<span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+<span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
+</div>
+<!-- Row A -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">A</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]" title="#SMP-1001 (Terisi)">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]" title="#SMP-1002">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]" title="#SMP-1003">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]" title="#SMP-1004">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]" title="#SMP-1005">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+<!-- Row B -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">B</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-error text-on-error flex items-center justify-center font-data-mono-sm text-[10px]" title="Cito #SMP-0992">!</div>
+<div class="h-6 rounded bg-error text-on-error flex items-center justify-center font-data-mono-sm text-[10px]" title="Cito #SMP-0993">!</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+</div>
+<!-- Row C -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">C</span>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+<!-- Row D -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">D</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-error text-on-error flex items-center justify-center font-data-mono-sm text-[10px]" title="Cito #SMP-0994">!</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+</div>
+<!-- Row E (CONTAINS ACTIVE TARGET E-07) -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-secondary">E</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<!-- SELECTED SLOT E-07 -->
+<div class="h-6 rounded bg-secondary text-on-secondary shadow-md flex items-center justify-center font-data-mono-sm text-[11px] font-bold ring-2 ring-secondary-container animate-pulse cursor-pointer" title="TARGET SLOT TERPILIH: E-07">
+<span class="material-symbols-outlined text-[14px]">my_location</span>
+</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+</div>
+<!-- Row F -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">F</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+<!-- Row G -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">G</span>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+<!-- Row H -->
+<div class="grid grid-cols-11 gap-1 text-center items-center mb-1">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">H</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+<!-- Row J -->
+<div class="grid grid-cols-11 gap-1 text-center items-center">
+<span class="font-data-mono-sm text-data-mono-sm font-bold text-on-surface-variant">J</span>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-error text-on-error flex items-center justify-center font-data-mono-sm text-[10px]" title="Cito #SMP-0995">!</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-primary text-on-primary flex items-center justify-center font-data-mono-sm text-[10px]">•</div>
+<div class="h-6 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed/50 cursor-pointer flex items-center justify-center font-data-mono-sm text-[10px]"></div>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs mt-space-md pt-space-xs">
+<div class="flex items-center gap-1.5 font-data-mono-sm text-data-mono-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-surface-container-lowest shadow-2xs"></span>
+<span>Kosong (28)</span>
+</div>
+<div class="flex items-center gap-1.5 font-data-mono-sm text-data-mono-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span>Terisi (67)</span>
+</div>
+<div class="flex items-center gap-1.5 font-data-mono-sm text-data-mono-sm text-error font-semibold">
+<span class="w-3 h-3 rounded bg-error"></span>
+<span>Cito (4)</span>
+</div>
+<div class="flex items-center gap-1.5 font-data-mono-sm text-data-mono-sm text-secondary font-bold">
+<span class="w-3 h-3 rounded bg-secondary animate-pulse"></span>
+<span>Target: E-07</span>
+</div>
+</div>
+</div>
+<!-- Selected Location Detail Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Lokasi Cold-Chain Terkunci</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded bg-secondary-container/40 text-on-secondary-container font-semibold">VALIDASI RUANG OK</span>
+</div>
+<!-- Location Chain Breadcrumb Badge -->
+<div class="p-space-md rounded bg-surface-container-low mb-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-data-mono-md text-data-mono-md font-bold text-primary flex-wrap">
+<span class="px-2 py-1 rounded bg-surface-container-lowest shadow-2xs">CHILLER-B1</span>
+<span class="text-on-surface-variant">&gt;</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest shadow-2xs">TRAY-04</span>
+<span class="text-on-surface-variant">&gt;</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest shadow-2xs">BARIS E</span>
+<span class="text-on-surface-variant">&gt;</span>
+<span class="px-2.5 py-1 rounded bg-secondary text-on-secondary shadow-sm">KOLOM 07</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Posisi terdekat dari akses pintu tengah Chiller B1. Sesuai matriks stabilitas Darah EDTA (≤48 jam pada 2-8°C).
+          </p>
+</div>
+<!-- Shelf Locator Barcode Widget -->
+<div class="flex items-center justify-between p-space-sm rounded bg-surface-container mb-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Barcode Verifikasi Posisi Rak</span>
+<span class="font-data-mono-md text-data-mono-md font-bold text-primary tracking-wider">LOC-CHB1-T04-E07</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Micro 2D QR Code SVG -->
+<svg class="w-8 h-8 text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14-2h4v2h-4v-2zm-4 0h2v4h-2v-4zm2 4h4v4h-4v-4zm-2 2h2v2h-2v-2z"></path>
+</svg>
+<button class="p-2 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors" title="Cetak Barcode Rak">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-2.5 px-3 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Kunci Alokasi Posisi</span>
+</button>
+<button class="py-2.5 px-3 rounded bg-secondary-fixed hover:bg-secondary-fixed-dim text-on-secondary-fixed font-body-sm text-body-sm font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">magic_button</span>
+<span>Rekomendasi Ulang</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Floating / Sticky Summary Bar -->
+<div class="fixed bottom-0 left-72 right-0 bg-surface-container-lowest/95 backdrop-blur-md border-t-0 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] z-40 px-gutter-lg py-space-sm">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md max-w-full mx-auto">
+<!-- Left Info: Live Registration Summary -->
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[24px]">biotech</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-md text-body-md font-bold text-on-surface">#SMP-2025-1043</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.2 rounded bg-surface-container text-on-surface font-medium">Darah Vena EDTA</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">Chiller B1 [E-07]</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Tn. Hendra Gunawan • Klien: RS Siloam • SLA: 23 Okt 2025, 10:00 WIB
+          </span>
+</div>
+</div>
+<!-- Right Buttons: Action Controls -->
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-3.5 py-2 rounded bg-surface-container text-on-surface font-body-md text-body-md font-medium hover:bg-surface-container-high transition-colors" type="button">
+          Simpan Draft Sementara
+        </button>
+<button class="px-3.5 py-2 rounded bg-surface-container text-on-surface font-body-md text-body-md font-medium hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Cetak Bukti Tanda Terima</span>
+</button>
+<button class="px-5 py-2 rounded bg-primary text-on-primary font-body-md text-body-md font-bold hover:bg-primary-container shadow-md transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">input</span>
+<span>Daftarkan &amp; Masukkan Antrean Analis</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-high": "#dce9ff", "on-tertiary": "#ffffff", "surface-container-low": "#eff4ff", "primary": "#091426", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#3c475a", "on-background": "#0b1c30", "tertiary": "#00113b", "secondary-fixed-dim": "#6bd8cb", "on-primary-fixed": "#111c2d", "primary-fixed": "#d8e3fb", "primary-container": "#1e293b", "background": "#f8f9ff", "on-secondary-fixed": "#00201d", "tertiary-container": "#002367", "inverse-surface": "#213145", "secondary-container": "#86f2e4", "surface-variant": "#d3e4fe", "surface-container": "#e5eeff", "on-tertiary-fixed-variant": "#003ea8", "on-primary": "#ffffff", "on-tertiary-container": "#5f8aff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#005049", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed": "#00174b", "outline-variant": "#c5c6cd", "on-primary-container": "#8590a6", "surface-bright": "#f8f9ff", "tertiary-fixed": "#dbe1ff", "primary-fixed-dim": "#bcc7de", "on-surface": "#0b1c30", "surface-tint": "#545f73", "tertiary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-error": "#ffffff", "on-secondary-container": "#006f66", "outline": "#75777d", "surface-container-highest": "#d3e4fe", "on-error-container": "#93000a", "inverse-primary": "#bcc7de", "on-secondary": "#ffffff", "surface": "#f8f9ff", "secondary-fixed": "#89f5e7", "secondary": "#006a61", "surface-dim": "#cbdbf5", "on-surface-variant": "#45474c" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-md": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xl": "1.5rem", "space-2xs": "0.125rem", "space-2xl": "2rem", "space-md": "0.75rem", "space-lg": "1rem", "margin-lg": "2rem", "gutter-lg": "1.5rem", "margin": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "data-mono-md": ["JetBrains Mono"], "data-mono-sm": ["JetBrains Mono"], "data-mono-lg": ["JetBrains Mono"], "headline-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "label-caps": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"] }, "fontSize": { "body-sm": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "400" }], "body-md": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-xl": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "data-mono-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0em", "fontWeight": "500" }], "data-mono-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "data-mono-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-caps": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-md border-b border-outline-variant/20 bg-surface-container-lowest shrink-0"><img alt="SynthaLIMS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VpsSyc1CY79_guaP0BZ_k0wUmR2Nh8OilPMpXsEPW1i27cKMQAiXaGYzThpUfs1zXbSifKawgZPImuNikfoSSm4qCJcE5Uj-A4y2g3c8bRuV65BXLDMOtt15ap8B29If-Tr1nkl9rQs89h38K8dgomvJzbCJKP3LnM-ilULp9Ku-IZbGQJvNXDcK4kS9B-zx6xxA_mQFdPd3ysRplGaWYkP_GOppxV3IcJKoh8miuSEvLRh_V3Tk4mvg"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary leading-tight font-bold">SynthaLIMS</span><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant uppercase tracking-wider">v3.42 • Enterprise</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-space-md"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Overview &amp; Intake</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="dashboard-utama-lims" href="#"><span class="font-body-md text-body-md">Dashboard Utama</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-medium">LIVE</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="pelacakan-sampel-lims" href="#"><span class="font-body-md text-body-md">Pelacakan Sampel</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="registrasi-sampel" href="#"><span class="font-body-md text-body-md">Registrasi Sampel</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Testing &amp; Workflow</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="antrean-pengujian" href="#"><span class="font-body-md text-body-md">Antrean Pengujian</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-surface-container text-on-surface">14</span></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-xs rounded transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="workspace-analis" href="#"><span class="font-body-md text-body-md">Workspace Analis</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="manajemen-sop" href="#"><span class="font-body-md text-body-md">Manajemen SOP</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Quality &amp; Compliance</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="validasi-persetujuan" href="#"><span class="font-body-md text-body-md">Validasi &amp; Persetujuan</span><span class="font-data-mono-sm text-data-mono-sm px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-semibold">3</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="kontrol-kualitas-qc-chart" href="#"><span class="font-body-md text-body-md">Kontrol Kualitas / QC</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="jejak-audit" href="#"><span class="font-body-md text-body-md">Jejak Audit</span></a></div><div class="space-y-space-2xs"><div class="px-space-md py-space-xs font-label-caps text-label-caps uppercase text-on-surface-variant/70 tracking-wider">Logistics &amp; Admin</div><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="stok-reagen-bahan-kimia" href="#"><span class="font-body-md text-body-md">Stok Reagen &amp; Kimia</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="kalibrasi-alat-instrumen" href="#"><span class="font-body-md text-body-md">Kalibrasi Alat</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="laporan-sertifikat-coa" href="#"><span class="font-body-md text-body-md">Laporan &amp; COA</span></a><a class="group flex items-center justify-between px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="manajemen-pengguna-klien" href="#"><span class="font-body-md text-body-md">Pengguna &amp; Klien</span></a></div></nav></div></div><div class="p-space-md border-t border-outline-variant/20 bg-surface-container-low/50"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Cleanroom Unit A</span></div><span class="font-data-mono-sm text-data-mono-sm text-secondary font-semibold">ONLINE</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/25 z-40 px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-20 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Cari sampel (#SMP-...), barcode, nama klien, atau tes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-space-2xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">barcode_scanner</span><span class="font-data-mono-sm text-data-mono-sm px-1 py-0.5 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">⌘K</span></div></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container border border-outline-variant/30"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-data-mono-sm text-data-mono-sm text-on-surface font-medium">Lab Suhu: 20.4°C • Kelembapan: 48% <span class="text-secondary font-semibold">(Optimal)</span></span></div><button class="relative p-space-xs rounded hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-data-mono-sm text-[10px] font-bold ring-2 ring-surface-container-lowest">3</span></button><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-md pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Dr. Aris Setiawan, M.Si</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div><span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Kepala Laboratorium</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full gap-space-lg text-on-surface">
+<!-- Breadcrumb & Workflow Metadata Topbar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest px-space-lg py-space-sm rounded shadow-sm">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span>Testing &amp; Workflow</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Workspace Analis</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="bg-surface-container-high px-space-xs py-0.5 rounded font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">Uji Spektrofotometri &amp; Kimia Darah</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs font-data-mono-sm text-data-mono-sm text-on-surface-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span>Autosave Aktif: <strong class="text-on-surface font-semibold">10:48:12 WIB</strong></span>
+</div>
+<div class="h-4 w-px bg-surface-container-high"></div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">ID Sesi Analis:</span>
+<span class="font-data-mono-sm text-data-mono-sm px-space-xs py-0.5 rounded bg-surface-container text-primary font-bold">#ANL-042 (Rian H., S.Si)</span>
+</div>
+</div>
+</div>
+<!-- Specimen Intake & Context Header Banner -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-1.5 rounded">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">science</span>
+<span class="font-headline-md text-headline-md tracking-tight font-bold">#SMP-2025-1042</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-data-mono-sm text-data-mono-sm font-bold animate-pulse">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          CITO / URGENT (PRIORITAS 1)
+        </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          IN-RUNNING (Batch #RUN-2025-W11)
+        </span>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded text-on-surface-variant font-data-mono-sm text-data-mono-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">barcode_scanner</span>
+<span>BARCODE: *SMP1042EDTA*</span>
+</div>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">swap_horiz</span>
+          Tukar Spesimen
+        </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">print</span>
+          Cetak Lembar Kerja
+        </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">qr_code_scanner</span>
+          Scan Barcode Reagen
+        </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-secondary hover:bg-secondary/90 text-on-secondary font-body-sm text-body-sm font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">verified_user</span>
+          Tandatangani &amp; Kirim Validasi
+        </button>
+</div>
+</div>
+<!-- Patient, Client, Matrix & SLA Sub-grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md p-space-md bg-surface-container-low rounded">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Subjek / Pasien</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Ny. Ratna Kusuma (42 th)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">RM: #MED-9920194 • P</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Fasilitas / Klien</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">RS Siloam Lippo Village</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Dept. Rawat Intensif (ICU)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Matriks &amp; Antikoagulan</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Darah Vena EDTA</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Vol: 3.0 mL (Cukup)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Suhu Sampel Saat Ini</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-secondary">thermostat</span>
+<span class="font-body-md text-body-md font-semibold text-secondary">4.1°C (Chiller B1)</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Toleransi: 2.0°C – 8.0°C</span>
+</div>
+<div class="flex flex-col col-span-2 md:col-span-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Target Selesai SLA</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-error">alarm</span>
+<span class="font-data-mono-lg text-data-mono-lg font-bold text-error">01j 42m Tersisa</span>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Batas Maks: 12:30 WIB</span>
+</div>
+</div>
+</div>
+<!-- Instrument Telemetry Integration Box -->
+<div class="bg-primary text-on-primary rounded p-space-md shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="p-2.5 rounded bg-surface-container-lowest/10 text-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">biotech</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">Shimadzu UV-1900i Spektrofotometer</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold">TERHUBUNG (LIVE FEED)</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-0.5 font-data-mono-sm text-data-mono-sm text-on-primary-container">
+<span>Port: RS232-COM3 (Baud 9600)</span>
+<span>•</span>
+<span>Unit Lab: <strong class="text-on-primary">Lab Kimia-02</strong></span>
+<span>•</span>
+<span>Blank Absorban: <strong class="text-secondary-fixed">0.042 AU</strong></span>
+<span>•</span>
+<span>Drift Sinyal: <strong class="text-secondary-fixed">&lt;0.001 AU/hr (Optimal)</strong></span>
+<span>•</span>
+<span>Filter: 340 nm &amp; 405 nm</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-on-primary font-body-sm text-body-sm font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">show_chart</span>
+        Log Raw Data / Kurva
+      </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-secondary-fixed hover:bg-secondary-fixed-dim text-on-secondary-fixed font-body-sm text-body-sm font-bold shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">sync</span>
+        Tarik Data Otomatis (Auto-Fetch)
+      </button>
+</div>
+</div>
+<!-- Main Split Layout: 8 cols Parameter Grid + 4 cols Checklist & Deviation Sidebar -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANE: Parameter Testing Grid (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Grid Panel Container -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Table Toolbar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Parameter Analisis Kimia Rutin</span>
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">4 Parameter Terdaftar</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-medium shadow-sm transition-colors" type="button">Semua (4)</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:bg-surface-container font-medium transition-colors" type="button">Abnormal (2)</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:bg-surface-container font-medium transition-colors" type="button">Selesai (4)</button>
+</div>
+</div>
+<!-- Testing Grid Table -->
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="px-space-md py-space-sm">Parameter &amp; Metode</th>
+<th class="px-space-md py-space-sm">Nilai Rujukan</th>
+<th class="px-space-md py-space-sm w-44">Hasil Pembacaan</th>
+<th class="px-space-md py-space-sm">Deviasi / Evaluasi</th>
+<th class="px-space-md py-space-sm text-center">QC Z-Score</th>
+<th class="px-space-md py-space-sm text-center">Raw Data</th>
+<th class="px-space-md py-space-sm text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-md text-body-md">
+<!-- Parameter 1: ALT / SGPT (High Flag) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">ALT (Alanine Aminotransferase) / SGPT</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Metode: Kinetik UV - IFCC 37°C</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Batch Reagen: #ALT-099B</span>
+</div>
+</td>
+<td class="px-space-md py-space-md whitespace-nowrap">
+<span class="font-data-mono-md text-data-mono-md text-on-surface">7.0 – 56.0</span>
+<span class="text-on-surface-variant text-body-sm ml-0.5">U/L</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="relative flex items-center">
+<input class="w-full h-9 px-2.5 font-data-mono-lg text-data-mono-lg font-bold bg-surface-container-lowest rounded text-error focus:outline-none focus:bg-surface-container-low shadow-sm" type="text" value="68.4"/>
+<span class="absolute right-2 text-on-surface-variant font-data-mono-sm text-data-mono-sm">U/L</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-data-mono-sm text-data-mono-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">arrow_upward</span>
+                      ABOVE NORMAL (+22%)
+                    </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Baseline: 24.0 U/L</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-semibold">+0.8 SD (Pass)</span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Unduh / Periksa File .DAT" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Selesai
+                  </span>
+</td>
+</tr>
+<!-- Parameter 2: AST / SGOT (High Flag) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">AST (Aspartate Aminotransferase) / SGOT</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Metode: Kinetik UV - IFCC 37°C</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Batch Reagen: #AST-112C</span>
+</div>
+</td>
+<td class="px-space-md py-space-md whitespace-nowrap">
+<span class="font-data-mono-md text-data-mono-md text-on-surface">10.0 – 40.0</span>
+<span class="text-on-surface-variant text-body-sm ml-0.5">U/L</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="relative flex items-center">
+<input class="w-full h-9 px-2.5 font-data-mono-lg text-data-mono-lg font-bold bg-surface-container-lowest rounded text-error focus:outline-none focus:bg-surface-container-low shadow-sm" type="text" value="48.2"/>
+<span class="absolute right-2 text-on-surface-variant font-data-mono-sm text-data-mono-sm">U/L</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col items-start gap-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-data-mono-sm text-data-mono-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">arrow_upward</span>
+                      ABOVE NORMAL (+20.5%)
+                    </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Rasio De Ritis: 0.70</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-center">
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-semibold">+0.5 SD (Pass)</span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Unduh / Periksa File .DAT" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Selesai
+                  </span>
+</td>
+</tr>
+<!-- Parameter 3: Kreatinin Serum (Normal) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Kreatinin Serum</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Metode: Jaffe Reaction (Kompensasi Kinetik)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Batch Reagen: #CREAT-04X</span>
+</div>
+</td>
+<td class="px-space-md py-space-md whitespace-nowrap">
+<span class="font-data-mono-md text-data-mono-md text-on-surface">0.60 – 1.20</span>
+<span class="text-on-surface-variant text-body-sm ml-0.5">mg/dL</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="relative flex items-center">
+<input class="w-full h-9 px-2.5 font-data-mono-lg text-data-mono-lg font-bold bg-surface-container-lowest rounded text-on-surface focus:outline-none focus:bg-surface-container-low shadow-sm" type="text" value="0.94"/>
+<span class="absolute right-2 text-on-surface-variant font-data-mono-sm text-data-mono-sm">mg/dL</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    NORMAL (In-Range)
+                  </span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-semibold">-0.2 SD (Pass)</span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Unduh / Periksa File .DAT" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Selesai
+                  </span>
+</td>
+</tr>
+<!-- Parameter 4: Glukosa Darah Puasa (Normal) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Glukosa Darah Puasa (GDP)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Metode: Enzimatik Kolorimetrik GOD-PAP</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Batch Reagen: #GLUC-881</span>
+</div>
+</td>
+<td class="px-space-md py-space-md whitespace-nowrap">
+<span class="font-data-mono-md text-data-mono-md text-on-surface">70.0 – 100.0</span>
+<span class="text-on-surface-variant text-body-sm ml-0.5">mg/dL</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="relative flex items-center">
+<input class="w-full h-9 px-2.5 font-data-mono-lg text-data-mono-lg font-bold bg-surface-container-lowest rounded text-on-surface focus:outline-none focus:bg-surface-container-low shadow-sm" type="text" value="92.0"/>
+<span class="absolute right-2 text-on-surface-variant font-data-mono-sm text-data-mono-sm">mg/dL</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    NORMAL (In-Range)
+                  </span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<span class="font-data-mono-sm text-data-mono-sm px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-semibold">+0.1 SD (Pass)</span>
+</td>
+<td class="px-space-md py-space-md text-center">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Unduh / Periksa File .DAT" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+</td>
+<td class="px-space-md py-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-data-mono-sm text-data-mono-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Selesai
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Telemetry Sparkline & Run Delta Visualizer Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">timeline</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Profil Kinetik Absorban Sinar (Shimadzu Live)</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">ΔA/menit stabil pada koefisien variasi linear 0.9982 (R²)</span>
+</div>
+</div>
+<!-- Inline Sparkline Visual -->
+<div class="w-full md:w-64 h-8 flex items-center">
+<svg class="w-full h-8 overflow-visible" preserveaspectratio="none" viewbox="0 0 240 32">
+<path d="M0,28 L30,26 L60,25 L90,19 L120,18 L150,12 L180,10 L210,8 L240,6" fill="none" stroke="#006a61" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="240" cy="6" fill="#006a61" r="3.5"></circle>
+<!-- Target Boundary Guideline -->
+<line stroke="#c5c6cd" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="240" y1="16" y2="16"></line>
+</svg>
+</div>
+</div>
+</div>
+<!-- Specimen Visual Quality & Photomicrograph / Inspection Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex items-center gap-space-md">
+<img class="w-14 h-14 rounded object-cover shrink-0" data-alt="High precision clinical laboratory vacutainer blood sample with EDTA purple top tube under clean sterile cleanroom lighting with clear barcode label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8AavWn38qMda330s39DRMJgfoVZ70-kE_429Bbiqk9hGc-8hjQI9rTf_m72u93dZ_-LIlQPg-Uj2aCnV6ncJXSuvuz60sMB8jX2ThNjcaLWGluvlRuT7mBA2Jp1WdjfEEV_I8B50Fn_GI7bB4Gqlxv5JupKyIzUTcUp4PFSnGc2vsAzahw_JiVPQ8LrZjzvGysp5dsMNDBi7-U4D4pfFb64jpu8Y9h5U_8YklrbnVQhIhyf3mN3Hj"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Kondisi Tabung</span>
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">Tabung EDTA K2 (3mL)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-medium">Integritas Vakum Baik</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex items-center gap-space-md">
+<img class="w-14 h-14 rounded object-cover shrink-0" data-alt="Close up clinical spectrophotometer flow cell cuvette filled with amber-tinted analytical serum reagent illuminated by blue laser optics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArc_qmTFzVq4zklpzN0EK7xe2AhhTM7XqZ1TTke8a6S6Nvfcw4NPaJSS2GbFa5F6VD_gDy62ciIjFWF38jcf4lU0UxaX0vl98M8546Zvbs4kbF57dsKThYuba1YycvbOntpwuqAGA9QMl6GW2uOSCLREm-6VVgd624lhjJQNeuaR9NOwwXkZ2g1bOIKo3FgvP1DBE63o0e9LcqBAlHd8eGEno4avTp8su5udILCZmsmqwaA7W28C59"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Penampakan Serum</span>
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">Ikterik Ringan (+)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Hemolisis (-), Lipemik (-)</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex items-center gap-space-md">
+<div class="w-14 h-14 rounded bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Reagen Lot Status</span>
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">Lot #RGN-4412 Valid</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Expired: 18 Nov 2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: Digital SOP Checklist & Analyst Observations (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Tabbed SOP & Deviation Container -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<div class="flex items-center bg-surface-container-low p-1">
+<button class="flex-1 py-1.5 px-space-sm rounded bg-surface-container-lowest font-body-sm text-body-sm font-semibold text-primary shadow-sm text-center" type="button">
+            Checklist SOP (ISO 17025)
+          </button>
+<button class="flex-1 py-1.5 px-space-sm rounded font-body-sm text-body-sm font-medium text-on-surface-variant hover:text-on-surface text-center transition-colors" type="button">
+            Observasi &amp; Catatan
+          </button>
+</div>
+<!-- SOP Compliance Checklist Body -->
+<div class="p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Prosedur Standar IK/SOP-LAB-018</span>
+<span class="font-data-mono-sm text-data-mono-sm px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold">3/5 Selesai</span>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm">
+<!-- Item 1 - Checked -->
+<label class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/60 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Verifikasi suhu penyimpanan sampel</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">4.0°C ± 1°C • Terverifikasi 10:32 WIB</span>
+</div>
+</label>
+<!-- Item 2 - Checked -->
+<label class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/60 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Kalibrasi titik nol (Reagent Blank)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Absorban 0.042 AU • Terverifikasi 10:45 WIB</span>
+</div>
+</label>
+<!-- Item 3 - Checked -->
+<label class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/60 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Uji sampel kontrol mutu harian (QC)</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-semibold">Lot #QC-2025-A: LOLOS (Westgard Rules OK)</span>
+</div>
+</label>
+<!-- Item 4 - Pending -->
+<label class="flex items-start gap-space-sm p-space-sm rounded bg-surface hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<input class="mt-0.5 rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Verifikasi homogenitas sebelum aspirasi</span>
+<span class="font-data-mono-sm text-data-mono-sm text-error font-medium">Wajib dikonfirmasi oleh analis pelaksana</span>
+</div>
+</label>
+<!-- Item 5 - Pending -->
+<label class="flex items-start gap-space-sm p-space-sm rounded bg-surface hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<input class="mt-0.5 rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Validasi barcode kit reagen kerja</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Reagen Lot #RGN-4412 EXP: Nov 2026</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Analyst Observation Form Segment -->
+<div class="p-space-md bg-surface-container-low/40 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Catatan Deviasi &amp; Observasi</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant">Karakter: 112/500</span>
+</div>
+<textarea class="w-full p-2 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/50 shadow-sm" placeholder="Ketik deviasi atau catatan fisik spesimen..." rows="3">Serum sedikit ikterik, dilakukan sentrifugasi ulang 3000 RPM selama 5 menit sesuai SOP-KLIN-04 sebelum pengukuran enzimatik.</textarea>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant font-data-mono-sm text-data-mono-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+<span>Enkripsi Hash SHA-256 Audit Trail</span>
+</div>
+<button class="text-secondary font-body-sm text-body-sm font-semibold hover:underline" type="button">
+              + Lampirkan Foto
+            </button>
+</div>
+</div>
+<!-- Previous Analyst Action Log -->
+<div class="p-space-md flex flex-col gap-space-xs bg-surface-container-lowest">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Riwayat Jejak Audit Sesi Ini</span>
+<div class="space-y-1.5 font-data-mono-sm text-data-mono-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>10:32:11 • Sampel diambil dari Chiller B1</span>
+<span class="text-on-surface">ANL-042</span>
+</div>
+<div class="flex items-center justify-between">
+<span>10:41:04 • Tarik otomatis 4 parameter dari UV-1900i</span>
+<span class="text-secondary font-semibold">AUTO-SYNC</span>
+</div>
+<div class="flex items-center justify-between">
+<span>10:44:50 • Deviasi rasio ALT/AST dianalisis manual</span>
+<span class="text-on-surface">ANL-042</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STICKY ACTION & VERIFICATION FOOTER -->
+<div class="sticky bottom-4 z-30 bg-surface-container-lowest rounded p-space-md shadow-xl flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<!-- Legal Compliance Statement & Checkbox -->
+<div class="flex items-start sm:items-center gap-space-md">
+<input checked="" class="mt-0.5 sm:mt-0 rounded text-primary focus:ring-0 w-4 h-4 cursor-pointer" id="legal-confirm" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface select-none cursor-pointer" for="legal-confirm">
+        Saya menyatakan dengan integritas profesional bahwa seluruh proses pengujian telah dijalankan sesuai Instruksi Kerja (<strong class="font-semibold">IK/SOP-LAB-018</strong>) dan hasil yang diinput adalah otentik dari instrumen terkalibrasi.
+      </label>
+</div>
+<!-- State Buttons & Submission Group -->
+<div class="flex flex-wrap items-center justify-end gap-space-sm shrink-0 w-full lg:w-auto">
+<button class="px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold transition-colors" type="button">
+        Simpan Draft Sementara
+      </button>
+<button class="px-space-md py-2 rounded bg-error-container hover:bg-error-container/80 text-on-error-container font-body-sm text-body-sm font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[17px]">report_problem</span>
+        Eskalasi Deviasi Lab
+      </button>
+<button class="px-space-lg py-2 rounded bg-primary hover:bg-primary/90 text-on-primary font-body-sm text-body-sm font-bold shadow transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">send_and_archive</span>
+        Kirim ke Validasi &amp; Supervisor
+      </button>
+</div>
+</div>
+</div></main></div></body></html>
