@@ -1,14 +1,4 @@
-import { useState } from 'react'
-
-const MATRIX = ['Darah Vena EDTA (Tutup Ungu K2EDTA)', 'Plasma Heparin (Tutup Hijau Lithium Heparin)', 'Serum Clot Activator (Tutup Merah)', 'Swab Nasofaring (VTM - Viral Media)', 'Air Limbah Industri Effluent', 'Ekstrak Herbal / Pangan Olahan', 'Urin Tampung 24 Jam']
-const PRIORS = [
-  { id: 'rutin', name: 'Rutin', meta: 'SLA 24 Jam' },
-  { id: 'cito', name: 'Cito!', meta: '≤ 2 Jam', dot: true },
-  { id: 'inv', name: 'Investigasi', meta: 'Audit/R&D' }
-]
-
-export default function SectionA({ code, onRegen }) {
-  const [prior, setPrior] = useState('rutin')
+export default function SectionA({ code, onRegen, matrix, onMatrix, prior, onPrior }) {
   return (
     <section className="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
       <div className="flex items-center justify-between pb-space-sm mb-space-md">
@@ -44,8 +34,8 @@ export default function SectionA({ code, onRegen }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-md pt-space-md bg-surface-container-low/40 p-space-md rounded">
         <div className="flex flex-col gap-space-xs">
           <label className="font-label-caps text-label-caps text-on-surface-variant uppercase">Matriks &amp; Tipe Spesimen</label>
-          <select className="w-full h-10 px-3 rounded bg-surface-container-lowest font-body-md focus:outline-none focus:ring-1 focus:ring-primary">
-            {MATRIX.map((m) => (<option key={m}>{m}</option>))}
+          <select value={matrix} onChange={(e) => onMatrix && onMatrix(e.target.value)} className="w-full h-10 px-3 rounded bg-surface-container-lowest font-body-md focus:outline-none focus:ring-1 focus:ring-primary">
+            {['Darah Vena EDTA (Tutup Ungu K2EDTA)', 'Plasma Heparin (Tutup Hijau Lithium Heparin)', 'Serum Clot Activator (Tutup Merah)', 'Swab Nasofaring (VTM - Viral Media)', 'Air Limbah Industri Effluent', 'Ekstrak Herbal / Pangan Olahan', 'Urin Tampung 24 Jam'].map((m) => (<option key={m}>{m}</option>))}
           </select>
           <div className="flex flex-wrap gap-1 mt-1">
             <span className="font-data-mono-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">EDTA-K2 3.0 mL</span>
@@ -55,8 +45,8 @@ export default function SectionA({ code, onRegen }) {
         <div className="flex flex-col gap-space-xs">
           <label className="font-label-caps text-label-caps text-on-surface-variant uppercase">Tingkat Prioritas / Cito SLA</label>
           <div className="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded">
-            {PRIORS.map((p) => (
-              <button key={p.id} onClick={() => setPrior(p.id)} type="button"
+            {[{ id: 'rutin', name: 'Rutin', meta: 'SLA 24 Jam' }, { id: 'cito', name: 'Cito!', meta: '≤ 2 Jam', dot: true }, { id: 'investigasi', name: 'Investigasi', meta: 'Audit/R&D' }].map((p) => (
+              <button key={p.id} onClick={() => onPrior(p.id)} type="button"
                 className={prior === p.id ? 'py-1.5 px-2 rounded bg-primary text-on-primary font-body-sm font-semibold flex flex-col items-center' : 'py-1.5 px-2 rounded hover:bg-surface-container font-body-sm font-medium flex flex-col items-center text-on-surface-variant'}>
                 <span className="flex items-center gap-1">{p.dot && <span className="w-2 h-2 rounded-full bg-error"></span>}{p.name}</span>
                 <span className="font-data-mono-sm text-[10px]">{p.meta}</span>
