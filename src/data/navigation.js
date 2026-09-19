@@ -2,7 +2,7 @@ export const navSections = [
   {
     title: 'Overview & Intake',
     items: [
-      { label: 'Dashboard Utama', icon: 'dashboard', path: 'dashboard-utama', badge: 'LIVE', badgeClass: 'bg-surface-container-high text-on-surface font-medium', active: true },
+      { label: 'Dashboard Utama', icon: 'dashboard', path: 'dashboard-utama', badge: 'LIVE', badgeClass: 'bg-surface-container-high text-on-surface font-medium' },
       { label: 'Pelacakan Sampel', icon: 'qr_code_scanner', path: 'pelacakan-sampel' },
       { label: 'Registrasi Sampel', icon: 'note_add', path: 'registrasi-sampel' }
     ]
